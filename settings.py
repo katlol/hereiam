@@ -4,8 +4,8 @@ import traceback
 
 db_url = os.getenv('DB_URL', 'postgres://postgres@postgres/postgres')
 bind_port = os.getenv('BIND_PORT', 80)
-
 debug = os.getenv('DEBUG') is not None
+disable_historical = os.getenv('DISABLE_HISTORICAL_VIEW') is not None
 
 hashing_key = os.getenv('HASHING_KEY')
 if not hashing_key or len(hashing_key) < 128:

@@ -19,6 +19,9 @@ async def position_get(request, name):
 
 @app.route('/positions/<name:[a-z]+>')
 async def positions_user(request, name):
+    if settings.disable_historical:
+        return sanic.response.json([])
+
     data = historical.find(name=name, order_by='-time', _limit=100)
     results = []
     for event in data:
