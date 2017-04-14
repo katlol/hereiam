@@ -52,4 +52,4 @@ async def position_set(request, name, token, position):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=settings.bind_port)
+    app.run(host='0.0.0.0', port=settings.bind_port, debug=settings.debug)
