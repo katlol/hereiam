@@ -1,0 +1,14 @@
+version: '2'
+services:
+  app:
+    build: .
+    env_file: .env
+    volumes:
+      - .:/app
+    ports:
+      - 8000:80
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:9.6-alpine
